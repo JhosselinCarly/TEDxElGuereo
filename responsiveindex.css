@@ -1,0 +1,103 @@
+@media (max-width:740px)
+{
+    body
+    {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-image: url(img/CELULAR\ FONO.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: 0px -100px;
+        
+    }
+    .titulo
+    {
+        margin-top: -150px;
+    }
+    .titulo img
+    {
+        width: 300px;
+        height: 300px;
+    }
+    .titulo img:nth-child(even)
+    {
+        width: 180px;
+        height: auto;
+        margin-top: -120px;
+    }
+    .boton
+    {
+        margin-top: -260px;
+    }
+    .boton button
+    {
+        width: 130px;
+        height: 36px;
+    }
+    .lineas img
+    {
+        width: 400px;
+        height: auto;
+    }
+    @keyframes desliza
+    {
+        0% {
+        transform: translateX(50%);
+        }
+    
+        100% {
+        transform: translateX(20%);
+        }
+    }
+    .lineas2
+    {
+        width: 900px;
+        height: auto;
+        left: -8%;
+        animation: deslizaleft 8s ease-in-out forwards;
+        animation-delay: 2s;
+    }
+    .lineas3
+    {
+        width: 900px;
+        height: auto;
+        animation: deslizaleft 8s ease-in-out forwards;
+        animation-delay: 1s;
+        left: -9%;
+    }
+    @keyframes deslizaleft
+{
+    0%
+    {
+      transform: translateY(-100%);
+    }
+  
+    100% 
+    {
+        transform: translateY(0%);
+    }
+}
+@keyframes deslizalefteven
+{
+    0%
+    {
+      transform: translateY(-100%);
+    }
+  
+    100% 
+    {
+        transform: translateY(0%);
+    }
+}
+
+}
+
+@media (max-width:576px)
+{
+
+}
+@media (max-width:778px)
+{
+    
+}

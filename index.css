@@ -1,0 +1,239 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    --fondo-blanco:#fff;
+    --color-destacado:#c00707;
+    --fondo-negro:#0f0f0b;
+    --fondo-gris:#919191;
+    --fondo-gris-a:#efefef;
+    --letras-blanco:#ffff;
+}
+body
+{
+    background-image: url(./img/fondo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0px -100px;
+    z-index: -1;
+}
+.abre
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+.abre .capa
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: top;
+  animation: abre 2s ease-in-out forwards;
+}
+.abre .capa:nth-child(1)
+{
+  background: var(--fondo-blanco);
+  z-index: 2;
+}
+@keyframes abre
+{
+  0%
+  {
+    transform: scaleY(1);
+  }
+  100%
+  {
+    transform: scaleY(0);
+  }
+}
+.contenido
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo
+{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+    z-index: 1;
+    opacity: 0;
+    animation: fundido 2s linear forwards, movimiento 6s linear infinite;
+    animation-delay: 1s;
+}
+.titulo img
+{
+    width: 1000px;
+    height: auto;
+}
+.titulo img:nth-child(even)
+{
+    width: 260px;
+    height: auto;
+}
+
+@keyframes fundido
+{
+    0%
+  {
+    opacity: 0;
+  }
+  50%
+  {
+    opacity: 0.5;
+  }
+    100%
+  {
+    opacity: 1;
+  }
+}
+.lineas
+{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    animation:desliza 8s ease-in-out forwards;
+    display:flex;
+    justify-content: end;
+    top:160px;
+}
+
+.lineas img
+{
+    width: 600px;
+    height: auto;
+}
+@keyframes desliza
+{
+    0% {
+      transform: translateX(50%);
+    }
+  
+    100% {
+      transform: translateX(0%);
+    }
+}
+
+.lineas2
+{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: start;
+    top:0px;
+    left: 0%;
+    animation: deslizaleft 8s ease-in-out infinite;
+    animation-delay: 1s;
+}
+.lineas3
+{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: start;
+    top:0px;
+    left: 0%;
+    animation: deslizalefteven 9s ease-in-out infinite;
+    animation-delay: 1s;
+}
+@keyframes deslizaleft
+{
+    0%,100% {
+      transform: translateY(-100%);
+    }
+  
+    50% 
+    {
+        transform: translateY(0%);
+    }
+}
+@keyframes deslizalefteven
+{
+    0%,100% {
+      transform: translateY(-100%);
+    }
+  
+    50% 
+    {
+        transform: translateY(0%);
+    }
+}
+.boton
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position:absolute;
+    padding: 40px;
+    z-index: 1;
+    animation: boton 2s ease-in-out forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+@keyframes boton
+{
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  
+    0% 
+    {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+}
+.boton button
+{
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    background-color:var(--fondo-blanco);
+    font-size: 1em;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: none;
+}
+.boton button:hover
+{
+    background-color:rgba(255, 255, 255, 0.1);
+    transition: ease all 0.1s;
+    box-shadow: 0 0 10px #fff;
+}
+.boton button a
+{
+    color: #0f0f0b;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    animation: texto ease-in-out infinite;
+}
+.boton button a:hover
+{
+    color: white;
+}
